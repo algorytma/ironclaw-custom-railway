@@ -1,6 +1,6 @@
 # IronClaw Custom Railway Template (Nvidia NIM & OpenRouter Destekli)
 
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.app/template/new?template=https://github.com/algorytma/ironclaw-custom-railway)
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/template/SLQJV1?referralCode=V-zTuH)
 
 Bu proje, orijinal [nearai/ironclaw](https://github.com/nearai/ironclaw) tabanlı görev yöneticisi, yapay zeka asistanı ve bellek sistemini **Railway üzerinde tek tıkla çalışabilen profesyonel bir şablona (template)** dönüştürmek amacıyla oluşturulmuştur.
 
