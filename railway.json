@@ -1,26 +1,28 @@
 {
     "$schema": "https://railway.app/railway.json",
-    "build": {
-        "builder": "DOCKERFILE",
-        "dockerfilePath": "Dockerfile"
-    },
-    "deploy": {
-        "numReplicas": 1,
-        "sleep": false,
-        "restartPolicyType": "ON_FAILURE",
-        "healthcheckPath": "/",
-        "healthcheckTimeout": 100,
-        "volumes": [
-            {
-                "mountPath": "/home/ironclaw",
-                "name": "ironclaw-data"
-            }
-        ]
-    },
-    "variables": {
-        "DATABASE_URL": "postgresql://${{ services.postgres.variables.POSTGRES_USER }}:${{ services.postgres.variables.POSTGRES_PASSWORD }}@postgres:5432/${{ services.postgres.variables.POSTGRES_DB }}"
-    },
     "services": {
+        "ironclaw-custom-railway": {
+            "build": {
+                "builder": "DOCKERFILE",
+                "dockerfilePath": "Dockerfile"
+            },
+            "deploy": {
+                "numReplicas": 1,
+                "sleep": false,
+                "restartPolicyType": "ON_FAILURE",
+                "healthcheckPath": "/",
+                "healthcheckTimeout": 100
+            },
+            "variables": {
+                "DATABASE_URL": "postgresql://${{ services.postgres.variables.POSTGRES_USER }}:${{ services.postgres.variables.POSTGRES_PASSWORD }}@${{ services.postgres.variables.RAILWAY_PRIVATE_DOMAIN }}:5432/${{ services.postgres.variables.POSTGRES_DB }}"
+            },
+            "volumes": [
+                {
+                    "mountPath": "/home/ironclaw",
+                    "name": "ironclaw-data"
+                }
+            ]
+        },
         "postgres": {
             "image": "pgvector/pgvector:pg16-trixie",
             "variables": {
