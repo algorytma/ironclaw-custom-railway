@@ -53,7 +53,7 @@ Projeyi çalıştırmak ve kullanmak son derece basittir:
 Railway arayüzündeki Variables (Değişkenler) kısmındaki `Raw Editor` alanıyla direkt olarak aşağıdaki değerlerle düzenleyebilirsiniz: 
 
 ```env
-DATABASE_URL=postgresql://${{postgres.POSTGRES_USER}}:${{postgres.POSTGRES_PASSWORD}}@postgres.railway.internal:5432/${{postgres.POSTGRES_DB}}?sslmode=disable
+DATABASE_URL=postgresql://${{Postgres.POSTGRES_USER}}:${{Postgres.POSTGRES_PASSWORD}}@Postgres.railway.internal:5432/${{Postgres.POSTGRES_DB}}?sslmode=disable
 LLM_BACKEND=openai
 OPENAI_API_BASE=https://integrate.api.nvidia.com/v1
 OPENAI_MODEL_ID=minimaxai/minimax-m2.5
