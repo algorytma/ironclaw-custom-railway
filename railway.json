@@ -13,8 +13,15 @@
                 "healthcheckPath": "/",
                 "healthcheckTimeout": 100
             },
+            "networking": {
+                "serviceDomains": {
+                    "ironclaw-custom-railway": {
+                        "port": 8080
+                    }
+                }
+            },
             "variables": {
-                "DATABASE_URL": "postgresql://${{ services.postgres.variables.POSTGRES_USER }}:${{ services.postgres.variables.POSTGRES_PASSWORD }}@${{ services.postgres.variables.RAILWAY_PRIVATE_DOMAIN }}:5432/${{ services.postgres.variables.POSTGRES_DB }}"
+                "DATABASE_URL": "postgresql://${{ services.postgres.variables.POSTGRES_USER }}:${{ services.postgres.variables.POSTGRES_PASSWORD }}@postgres:5432/${{ services.postgres.variables.POSTGRES_DB }}"
             },
             "volumes": [
                 {
