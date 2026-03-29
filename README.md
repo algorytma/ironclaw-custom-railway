@@ -130,12 +130,19 @@ Use these variables on the IronClaw service:
     DATABASE_URL=postgresql://${{Postgres.POSTGRES_USER}}:${{Postgres.POSTGRES_PASSWORD}}@Postgres.railway.internal:5432/${{Postgres.POSTGRES_DB}}?sslmode=disable
     LLM_BACKEND=openai
     OPENAI_API_KEY=your_openai_api_key
+    OPENAI_API_BASE=https://integrate.api.nvidia.com/v1
+    OPENAI_MODEL_ID=minimaxai/minimax-m2.5
+    LLM_FAILOVER_BACKEND=openai
+    LLM_FAILOVER_API_KEY=your_openrouter_api_key
+    SMART_ROUTING_ENABLED=true
     ONBOARD_COMPLETED=true
     SANDBOX_ENABLED=false
     PORT=8080
     HTTP_HOST=0.0.0.0
     HTTP_PORT=8081
     HTTP_WEBHOOK_SECRET=${{ secret(32) }}
+    GATEWAY_AUTH_TOKEN=${{ secret(32) }}
+    SECRETS_MASTER_KEY=${{ secret(32) }}
 
 ### Postgres service
 
